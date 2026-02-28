@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Raph Construction - Project Portfolio Gallery of Completed Construction Projects">
+  <meta name="keywords" content="construction portfolio, projects, gallery, completed work">
+  <title>Projects - Raph Construction Company</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <div class="logo-icon">RC</div>
+        <span>RAPH</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="hero" style="min-height: 400px;">
+    <div class="hero-content">
+      <h1>Our Projects</h1>
+      <p class="hero-tagline">Portfolio of Excellence</p>
+    </div>
+  </section>
+
+  <!-- Project Gallery -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <p class="section-subtitle">Completed Works</p>
+        <h2>Featured Projects</h2>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <button class="btn btn-primary" onclick="filterProjects('all')" style="margin: 0.5rem;">All</button>
+        <button class="btn btn-outline" onclick="filterProjects('residential')" style="margin: 0.5rem;">Residential</button>
+        <button class="btn btn-outline" onclick="filterProjects('commercial')" style="margin: 0.5rem;">Commercial</button>
+        <button class="btn btn-outline" onclick="filterProjects('industrial')" style="margin: 0.5rem;">Industrial</button>
+      </div>
+
+      <div class="grid grid-3" id="projects-grid">
+        <!-- Residential Projects -->
+        <div class="card project-card" data-category="residential">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop" alt="Luxury Residential Complex">
+          <div class="card-content">
+            <h3 class="card-title">Luxury Residential Complex</h3>
+            <p class="card-text" style="color: #ff8c00; font-weight: 600; margin-bottom: 0.5rem;">Residential</p>
+            <p class="card-text">200 modern apartments across 5 towers with premium amenities, parking, and green spaces.</p>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;"><strong>Completed:</strong> 2023 | <strong>Area:</strong> 150,000 sq ft</p>
+            <a href="#project-detail-1" onclick="showProjectDetail(1)" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="card project-card" data-category="residential">
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400&h=300&fit=crop" alt="Modern Townhouses">
+          <div class="card-content">
+            <h3 class="card-title">Modern Townhouses</h3>
+            <p class="card-text" style="color: #ff8c00; font-weight: 600; margin-bottom: 0.5rem;">Residential</p>
+            <p class="card-text">45 contemporary townhouses with contemporary design and eco-friendly features.</p>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;"><strong>Completed:</strong> 2022 | <strong>Area:</strong> 85,000 sq ft</p>
+            <a href="#project-detail-2" onclick="showProjectDetail(2)" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <!-- Commercial Projects -->
+        <div class="card project-card" data-category="commercial">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=300&fit=crop" alt="Modern Office Complex">
+          <div class="card-content">
+            <h3 class="card-title">Modern Office Complex</h3>
+            <p class="card-text" style="color: #ff8c00; font-weight: 600; margin-bottom: 0.5rem;">Commercial</p>
+            <p class="card-text">State-of-the-art commercial building with modern office spaces and executive facilities.</p>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;"><strong>Completed:</strong> 2023 | <strong>Area:</strong> 50,000 sq ft</p>
+            <a href="#project-detail-3" onclick="showProjectDetail(3)" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="card project-card" data-category="commercial">
+          <img src="https://images.unsplash.com/photo-1486324803158-5ba68a9f0c75?w=400&h=300&fit=crop" alt="Shopping Mall Development">
+          <div class="card-content">
+            <h3 class="card-title">Shopping Mall Development</h3>
+            <p class="card-text" style="color: #ff8c00; font-weight: 600; margin-bottom: 0.5rem;">Commercial</p>
+            <p class="card-text">Large commercial hub with retail outlets, restaurants, cinema, and entertainment venues.</p>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;"><strong>Completed:</strong> 2021 | <strong>Area:</strong> 200,000 sq ft</p>
+            <a href="#project-detail-4" onclick="showProjectDetail(4)" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <!-- Industrial Projects -->
+        <div class="card project-card" data-category="industrial">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop" alt="Industrial Warehouse">
+          <div class="card-content">
+            <h3 class="card-title">Industrial Warehouse Complex</h3>
+            <p class="card-text" style="color: #ff8c00; font-weight: 600; margin-bottom: 0.5rem;">Industrial</p>
+            <p class="card-text">Large-scale industrial facility with logistics support, loading bays, and storage areas.</p>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;"><strong>Completed:</strong> 2022 | <strong>Area:</strong> 300,000 sq ft</p>
+            <a href="#project-detail-5" onclick="showProjectDetail(5)" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+
+        <div class="card project-card" data-category="commercial">
+          <img src="https://images.unsplash.com/photo-1465056836643-5c0714823abf?w=400&h=300&fit=crop" alt="Hotel Resort">
+          <div class="card-content">
+            <h3 class="card-title">Luxury Hotel Resort</h3>
+            <p class="card-text" style="color: #ff8c00; font-weight: 600; margin-bottom: 0.5rem;">Commercial</p>
+            <p class="card-text">5-star hotel resort with 300 rooms, conference facilities, and premium amenities.</p>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;"><strong>Completed:</strong> 2023 | <strong>Area:</strong> 250,000 sq ft</p>
+            <a href="#project-detail-6" onclick="showProjectDetail(6)" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Statistics -->
+  <section class="dark-bg">
+    <div class="container">
+      <div class="grid grid-4" style="text-align: center;">
+        <div>
+          <h2 style="color: #ff8c00; margin-bottom: 0.5rem;">500+</h2>
+          <p>Total Projects</p>
+        </div>
+        <div>
+          <h2 style="color: #ff8c00; margin-bottom: 0.5rem;">5M+</h2>
+          <p>Sq Ft Completed</p>
+        </div>
+        <div>
+          <h2 style="color: #ff8c00; margin-bottom: 0.5rem;">98%</h2>
+          <p>Client Satisfaction</p>
+        </div>
+        <div>
+          <h2 style="color: #ff8c00; margin-bottom: 0.5rem;">50+</h2>
+          <p>Team Members</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section>
+    <div class="container">
+      <div style="text-align: center; background: linear-gradient(135deg, #0d1f3c 0%, #1a2d4d 100%); padding: 3rem; border-radius: 8px; color: white;">
+        <h2 style="color: white; margin-bottom: 1rem;">Have a Project in Mind?</h2>
+        <p style="color: #bbb; margin-bottom: 2rem; font-size: 1.1rem;">Let's discuss your construction project and how we can bring your vision to life.</p>
+        <a href="contact.html" class="btn btn-primary btn-lg">Start Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Raph Construction</h4>
+          <p>Building excellence through expertise, innovation, and dedication to quality.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Building Construction</a></li>
+            <li><a href="services.html">Architectural Design</a></li>
+            <li><a href="services.html">Material Supply</a></li>
+            <li><a href="services.html">Equipment Rental</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <p>📍 123 Construction Blvd, City, State 12345</p>
+          <p>📞 +1 (555) 123-4567</p>
+          <p>📧 info@raphconstruction.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Raph Construction Company. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/1555123456" class="whatsapp-float" title="Chat with us on WhatsApp">
+    <span>💬</span>
+  </a>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top">↑</div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function filterProjects(category) {
+      const projects = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('button[onclick^="filterProjects"]');
+      
+      buttons.forEach(btn => {
+        btn.classList.remove('btn-primary');
+        btn.classList.add('btn-outline');
+      });
+      event.target.classList.add('btn-primary');
+      event.target.classList.remove('btn-outline');
+
+      projects.forEach(project => {
+        if (category === 'all' || project.dataset.category === category) {
+          project.style.display = 'block';
+          setTimeout(() => {
+            project.style.opacity = '1';
+            project.style.transform = 'scale(1)';
+          }, 10);
+        } else {
+          project.style.opacity = '0';
+          project.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            project.style.display = 'none';
+          }, 300);
+        }
+      });
+    }
+
+    function showProjectDetail(projectId) {
+      const details = {
+        1: {
+          title: 'Luxury Residential Complex',
+          category: 'Residential',
+          year: '2023',
+          area: '150,000 sq ft',
+          description: 'A premier residential complex featuring 200 modern apartments across 5 towers with premium amenities including swimming pool, gymnasium, community center, and landscaped gardens.',
+          features: ['5 Residential Towers', '200 Apartments', 'Swimming Pool', 'Gymnasium', 'Community Center', 'Parking Facilities', 'Green Spaces']
+        },
+        2: {
+          title: 'Modern Townhouses',
+          category: 'Residential',
+          year: '2022',
+          area: '85,000 sq ft',
+          description: 'Contemporary townhouse development with 45 units featuring modern architecture, energy-efficient systems, and eco-friendly construction practices.',
+          features: ['45 Townhouses', 'Contemporary Design', 'Eco-Friendly', 'Energy Efficient', 'Modern Amenities', 'Landscaped Surroundings']
+        },
+        3: {
+          title: 'Modern Office Complex',
+          category: 'Commercial',
+          year: '2023',
+          area: '50,000 sq ft',
+          description: 'State-of-the-art commercial office building designed for modern businesses with flexible office spaces, meeting rooms, executive facilities, and smart building systems.',
+          features: ['Flexible Office Spaces', 'Executive Facilities', 'Meeting Rooms', 'Smart Building Systems', 'High-Speed Internet', 'Parking Facilities']
+        },
+        4: {
+          title: 'Shopping Mall Development',
+          category: 'Commercial',
+          year: '2021',
+          area: '200,000 sq ft',
+          description: 'A comprehensive commercial hub featuring retail outlets, restaurants, cafes, cinema complex, and entertainment venues with modern architectural design.',
+          features: ['Retail Outlets', 'Restaurants & Cafes', 'Cinema Complex', 'Entertainment Venues', 'Food Court', 'Parking Facilities']
+        },
+        5: {
+          title: 'Industrial Warehouse Complex',
+          category: 'Industrial',
+          year: '2022',
+          area: '300,000 sq ft',
+          description: 'Large-scale industrial facility designed for logistics and storage with modern equipment, loading docks, and advanced security systems.',
+          features: ['Storage Area', 'Loading Facilities', 'Office Spaces', 'Security Systems', 'Modern Equipment', 'Easy Access']
+        },
+        6: {
+          title: 'Luxury Hotel Resort',
+          category: 'Commercial',
+          year: '2023',
+          area: '250,000 sq ft',
+          description: '5-star hotel resort with 300 luxurious rooms, conference facilities, restaurants, spa, and extensive recreational amenities.',
+          features: ['300 Rooms', 'Conference Facilities', 'Restaurants & Bars', 'Spa & Wellness', 'Swimming Pool', 'Recreational Facilities']
+        }
+      };
+
+      const detail = details[projectId];
+      alert(`Project: ${detail.title}\nCategory: ${detail.category}\nYear: ${detail.year}\nArea: ${detail.area}\n\n${detail.description}`);
+    }
+  </script>
+</body>
+</html>

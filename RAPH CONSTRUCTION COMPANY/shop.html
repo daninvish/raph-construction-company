@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Raph Construction Shop - Buy Construction Materials and Equipment Online">
+  <meta name="keywords" content="construction materials, equipment, shop, buy online, rental">
+  <title>Shop - Raph Construction Company</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .price {
+      color: #ff8c00;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .quantity-selector {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .quantity-selector input {
+      width: 60px;
+      padding: 8px;
+    }
+    .cart-icon {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: var(--secondary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: var(--transition);
+      z-index: 998;
+    }
+    .cart-icon:hover {
+      transform: scale(1.1);
+    }
+    .cart-badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #0d1f3c;
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <div class="logo-icon">RC</div>
+        <span>RAPH</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="hero" style="min-height: 400px;">
+    <div class="hero-content">
+      <h1>Raph Construction Shop</h1>
+      <p class="hero-tagline">Quality Materials & Equipment</p>
+    </div>
+  </section>
+
+  <!-- Product Categories -->
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <p class="section-subtitle">Shop By Category</p>
+        <h2>Browse Our Products</h2>
+      </div>
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <button class="btn btn-primary" onclick="filterShop('all')" style="margin: 0.5rem;">All Products</button>
+        <button class="btn btn-outline" onclick="filterShop('materials')" style="margin: 0.5rem;">Materials</button>
+        <button class="btn btn-outline" onclick="filterShop('equipment')" style="margin: 0.5rem;">Equipment</button>
+        <button class="btn btn-outline" onclick="filterShop('tools')" style="margin: 0.5rem;">Tools</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section>
+    <div class="container">
+      <div class="grid grid-4" id="shop-grid">
+        <!-- Material Products -->
+        <div class="card product-card" data-category="materials">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=300&h=250&fit=crop" alt="Portland Cement">
+          <div class="card-content">
+            <h3 class="card-title">Portland Cement</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">High-quality cement for construction</p>
+            <div class="price">$8.50 per bag</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Quantity:</label>
+              <input type="number" value="1" min="1" max="1000">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Portland Cement', 8.50)" style="width: 100%;">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card product-card" data-category="materials">
+          <img src="https://images.unsplash.com/photo-1607975591519-e9cb6d7eb6f1?w=300&h=250&fit=crop" alt="Steel Reinforcement">
+          <div class="card-content">
+            <h3 class="card-title">Steel Reinforcement Bars</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">12mm diameter, per meter</p>
+            <div class="price">$2.75 per meter</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Quantity:</label>
+              <input type="number" value="1" min="1" max="1000">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Steel Reinforcement', 2.75)" style="width: 100%;">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card product-card" data-category="materials">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=250&fit=crop" alt="Bricks">
+          <div class="card-content">
+            <h3 class="card-title">Clay Bricks</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">Standard size, per 1000 pieces</p>
+            <div class="price">$450.00 per 1000</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Quantity:</label>
+              <input type="number" value="1" min="1" max="100">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Clay Bricks', 450)" style="width: 100%;">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card product-card" data-category="materials">
+          <img src="https://images.unsplash.com/photo-1578452749519-e21cc028cb29?w=300&h=250&fit=crop" alt="Lumber">
+          <div class="card-content">
+            <h3 class="card-title">Pine Lumber</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">2x4 inches, per board foot</p>
+            <div class="price">$4.25 per board</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Quantity:</label>
+              <input type="number" value="1" min="1" max="500">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Pine Lumber', 4.25)" style="width: 100%;">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Equipment Products -->
+        <div class="card product-card" data-category="equipment">
+          <img src="https://images.unsplash.com/photo-1581092162562-40038f158a47?w=300&h=250&fit=crop" alt="Excavator Rental">
+          <div class="card-content">
+            <h3 class="card-title">Excavator Rental</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">Heavy duty excavator, per day</p>
+            <div class="price">$325.00 per day</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Days:</label>
+              <input type="number" value="1" min="1" max="365">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Excavator Rental', 325)" style="width: 100%;">Rent Now</button>
+          </div>
+        </div>
+
+        <div class="card product-card" data-category="equipment">
+          <img src="https://images.unsplash.com/photo-1581092916550-11a5d09d2e91?w=300&h=250&fit=crop" alt="Concrete Pump">
+          <div class="card-content">
+            <h3 class="card-title">Concrete Pump</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">20-meter reach pump, per day</p>
+            <div class="price">$450.00 per day</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Days:</label>
+              <input type="number" value="1" min="1" max="365">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Concrete Pump', 450)" style="width: 100%;">Rent Now</button>
+          </div>
+        </div>
+
+        <div class="card product-card" data-category="equipment">
+          <img src="https://images.unsplash.com/photo-1581092162556-40538773b237?w=300&h=250&fit=crop" alt="Crane Rental">
+          <div class="card-content">
+            <h3 class="card-title">Tower Crane Rental</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">50-ton capacity, per day</p>
+            <div class="price">$850.00 per day</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Days:</label>
+              <input type="number" value="1" min="1" max="365">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Tower Crane', 850)" style="width: 100%;">Rent Now</button>
+          </div>
+        </div>
+
+        <div class="card product-card" data-category="equipment">
+          <img src="https://images.unsplash.com/photo-1581092166562-40f1b9e6b7e4?w=300&h=250&fit=crop" alt="Scaffolding">
+          <div class="card-content">
+            <h3 class="card-title">Scaffolding System</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">Complete set, per week</p>
+            <div class="price">$200.00 per week</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Weeks:</label>
+              <input type="number" value="1" min="1" max="52">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Scaffolding', 200)" style="width: 100%;">Rent Now</button>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="card product-card" data-category="tools">
+          <img src="https://images.unsplash.com/photo-1584622181563-430f63602d4b?w=300&h=250&fit=crop" alt="Power Drill">
+          <div class="card-content">
+            <h3 class="card-title">Power Drill Set</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">Professional grade drill with bits</p>
+            <div class="price">$45.99</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Quantity:</label>
+              <input type="number" value="1" min="1" max="100">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Power Drill Set', 45.99)" style="width: 100%;">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card product-card" data-category="tools">
+          <img src="https://images.unsplash.com/photo-1578926314433-5f4d826faebf?w=300&h=250&fit=crop" alt="Safety Helmet">
+          <div class="card-content">
+            <h3 class="card-title">Safety Helmet</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">ANSI certified, per piece</p>
+            <div class="price">$15.50 each</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Quantity:</label>
+              <input type="number" value="1" min="1" max="500">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Safety Helmet', 15.50)" style="width: 100%;">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card product-card" data-category="tools">
+          <img src="https://images.unsplash.com/photo-1568518443512-c282e6b5b6f8?w=300&h=250&fit=crop" alt="Tool Belt">
+          <div class="card-content">
+            <h3 class="card-title">Professional Tool Belt</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">Heavy-duty leather belt</p>
+            <div class="price">$35.00</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Quantity:</label>
+              <input type="number" value="1" min="1" max="50">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Tool Belt', 35)" style="width: 100%;">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="card product-card" data-category="tools">
+          <img src="https://images.unsplash.com/photo-1584622181563-430f63602d4b?w=300&h=250&fit=crop" alt="Measuring Tape">
+          <div class="card-content">
+            <h3 class="card-title">50M Measuring Tape</h3>
+            <p class="card-text" style="font-size: 0.9rem; color: #666;">Stainless steel, laser markings</p>
+            <div class="price">$22.75</div>
+            <div class="quantity-selector">
+              <label style="color: #333; font-weight: 600;">Quantity:</label>
+              <input type="number" value="1" min="1" max="50">
+            </div>
+            <button class="btn btn-primary" onclick="addToCart(event, 'Measuring Tape', 22.75)" style="width: 100%;">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Offers Section -->
+  <section class="light-bg">
+    <div class="container">
+      <div class="section-title">
+        <h2>Special Offers</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div style="background: linear-gradient(135deg, #ff8c00 0%, #ffb84d 100%); padding: 2rem; border-radius: 8px; color: white; text-align: center;">
+            <h3 style="color: white; margin-bottom: 0.5rem;">Bulk Order Discount</h3>
+            <p style="margin-bottom: 1rem;">Get up to 20% off on bulk material orders</p>
+            <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white;">Learn More</a>
+          </div>
+        </div>
+        <div class="card">
+          <div style="background: linear-gradient(135deg, #0d1f3c 0%, #1a2d4d 100%); padding: 2rem; border-radius: 8px; color: white; text-align: center;">
+            <h3 style="color: white; margin-bottom: 0.5rem;">Long-Term Rentals</h3>
+            <p style="margin-bottom: 1rem;">15% discount on equipment rentals over 30 days</p>
+            <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white;">Inquire Now</a>
+          </div>
+        </div>
+        <div class="card">
+          <div style="background: linear-gradient(135deg, #333 0%, #555 100%); padding: 2rem; border-radius: 8px; color: white; text-align: center;">
+            <h3 style="color: white; margin-bottom: 0.5rem;">Contractor Program</h3>
+            <p style="margin-bottom: 1rem;">Special pricing and credit terms for contractors</p>
+            <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white;">Apply Today</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Raph Construction</h4>
+          <p>Building excellence through expertise, innovation, and dedication to quality.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="shop.html">Materials</a></li>
+            <li><a href="shop.html">Equipment</a></li>
+            <li><a href="shop.html">Tools</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <p>📍 123 Construction Blvd, City, State 12345</p>
+          <p>📞 +1 (555) 123-4567</p>
+          <p>📧 info@raphconstruction.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Raph Construction Company. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shopping Cart Icon -->
+  <div class="cart-icon" onclick="viewCart()">
+    <span>🛒</span>
+    <span class="cart-badge" id="cart-count">0</span>
+  </div>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/1555123456" class="whatsapp-float" title="Chat with us on WhatsApp">
+    <span>💬</span>
+  </a>
+
+  <!-- Scroll to Top Button -->
+  <div class="scroll-to-top">↑</div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    let cart = [];
+
+    function filterShop(category) {
+      const products = document.querySelectorAll('.product-card');
+      const buttons = document.querySelectorAll('button[onclick^="filterShop"]');
+      
+      buttons.forEach(btn => {
+        btn.classList.remove('btn-primary');
+        btn.classList.add('btn-outline');
+      });
+      event.target.classList.add('btn-primary');
+      event.target.classList.remove('btn-outline');
+
+      products.forEach(product => {
+        if (category === 'all' || product.dataset.category === category) {
+          product.style.display = 'block';
+          setTimeout(() => {
+            product.style.opacity = '1';
+            product.style.transform = 'scale(1)';
+          }, 10);
+        } else {
+          product.style.opacity = '0';
+          product.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            product.style.display = 'none';
+          }, 300);
+        }
+      });
+    }
+
+    function addToCart(e, productName, price) {
+      const quantityInput = e.target.parentElement.querySelector('input[type="number"]');
+      const quantity = parseInt(quantityInput.value) || 1;
+      
+      cart.push({
+        name: productName,
+        price: price,
+        quantity: quantity
+      });
+
+      document.getElementById('cart-count').textContent = cart.length;
+      
+      const alert = document.createElement('div');
+      alert.className = 'alert alert-success';
+      alert.textContent = `${productName} added to cart!`;
+      document.querySelector('.container').insertBefore(alert, document.querySelector('.container').firstChild);
+      
+      setTimeout(() => alert.remove(), 3000);
+    }
+
+    function viewCart() {
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+      
+      let cartSummary = 'Items in your cart:\n\n';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        cartSummary += `${index + 1}. ${item.name} - Qty: ${item.quantity} x $${item.price.toFixed(2)} = $${itemTotal.toFixed(2)}\n`;
+      });
+      
+      cartSummary += `\nTotal: $${total.toFixed(2)}`;
+      alertPlease proceed to checkout or contact us for payment options.`;
+      
+      alert(cartSummary + '\n\nPlease contact us to complete your purchase.');
+    }
+  </script>
+</body>
+</html>
