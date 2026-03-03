@@ -43,8 +43,7 @@ p {
     margin-bottom: 15px;
 }
 
-.hero,
-.hero-swiper {
+.hero,{
     max-width: 1200px auto;
     margin: 0 auto;
     max-height: 400px;
@@ -54,8 +53,7 @@ p {
     padding: 60px 20px;
 }
 
-.hero h1,
-.hero-swiper h1 {
+.hero h1, {
     color: #ff7d00;
 }
 
@@ -597,3 +595,4 @@ p {
         padding: 20px;
     }
 }
+
