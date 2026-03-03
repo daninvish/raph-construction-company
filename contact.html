@@ -1,14 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Location</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
 </head>
+
 <body>
-    <section>
-        <h1>Our Location</h1>
-        <p>We are located at 123 Main Street, Anytown, USA. Our office is open from 9:00 AM to 5:00 PM, Monday through Friday. Feel free to visit us during our business hours or contact us for any inquiries.</p>
+
+    <section class="hero animate-on-scroll">
+        <h1>Get in Touch</h1>
+        <p>We are here to help</p>
     </section>
+
+    <section class="locate-us bg-light padded animate-on-scroll">
+        <!-- Our location -->
+        <div class="address-menu">
+            <h3 class="icon">📍</h3>
+            <h2>Our Location</h2>
+            <h4>Raph Arch Construction Ltd</h4>
+            <p>Obote Avenue, Main Street <br>
+                Lira City <br>
+                Uganda
+            </p>
+        </div>
+        <!-- Call Us -->
+        <div class="address-menu">
+            <h3 class="icon">📞</h3>
+            <h2>Call Us</h2>
+            <h4>Main Office</h4>
+            <p>+256 785698748</p>
+            <h4>Emergency Line</h4>
+            <p>+256 785698748</p>
+            <p>Monday - Friday 8AM - 6PM <br>
+                Saturday - Sunday 9AM - 3PM
+            </p>
+        </div>
+
+        <!-- Personal info -->
+        <div class="address-menu">
+            <h3 class="icon"><img src="img/envelope-solid (1).png" alt="icon"></h3>
+            <h2>Email</h2>
+            <h4>General Inquiries</h4>
+            <p>info@rapharchconstruction@gmail.com</p>
+            <h4>Project Quotes</h4>
+            <p>Response Time</p>
+        </div>
+
+    </section>
+
+
+    <section class="locate-us message-container bg-secondary padded animate-on-scroll">
+        <!-- Message -->
+        <div class="message-item">
+            <div class="headingg">
+                <h2>Send us a message</h2>
+                <p>Fill out the form below</p>
+            </div>
+
+            <form action="#" method="post">
+                <div class="form-input">
+                    <label for="fullname">Full Name <span>*</span></label>
+                    <input type="text" name="fullname" id="fullname" required>
+                </div>
+                <div class="form-input">
+                    <label for="email">Email Address <span>*</span></label>
+                    <input type="email" name="email" id="email" autocomplete="email" required>
+                </div>
+                <div class="form-input">
+                    <label for="phone">Phone Number</label>
+                    <input type="number" name="phone" id="phone">
+                </div>
+                <div class="form-input">
+                    <label for="company-name">Company Name</label>
+                    <input type="text" name="company-name" id="company-name">
+                </div>
+                <div class="form-input">
+                    <label for="subject">Subject <span>*</span></label>
+                    <input type="text" name="subject" id="subject" required>
+                </div>
+                <div class="form-input">
+                    <label for="message">Message <span>*</span></label>
+                    <textarea name="message" id="message" rows="4" cols="25" required>
+                        
+                    </textarea>
+                </div>
+
+                <input type="submit" class="btn" value="Send Message">
+
+            </form>
+        </div>
+        <!-- Call Us -->
+        <div class="message-item">
+            <div class="quick-info">
+                <h2>Quick Info</h2>
+                <p>Why choose Raph Arch Construction Ltd?</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i>Professional and experienced team</li>
+                    <li><i class="fa-solid fa-check"></i>Quality construction services</li>
+                    <li><i class="fa-solid fa-check"></i>Timely project completion</li>
+                    <li><i class="fa-solid fa-check"></i>Affordable pricing</li>
+                </ul>
+            </div>
+
+            <div class="service-item quick-connect">
+                <h2>Quick Connect</h2>
+                <p>Need immediate assistance?</p>
+                <div class="links">
+                    <a href="https://wa.me/1234567890"><button class="btn" type="button">WhatSapp</button></a>
+                    <a href="tel:+256785698748"><button class="btn" type="button">Call Now</button></a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <a href="services.html">Back to Services</a>
+    <footer style="text-align:center; padding:20px; background:#1d1e1f; color:#fff;">
+        &copy; 2026 Raph Arch Construction Ltd. All rights reserved.
+    </footer>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
